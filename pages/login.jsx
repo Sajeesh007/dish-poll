@@ -1,9 +1,11 @@
-import React from 'react'
+import styles from '@/styles/LoginPage.module.css'
 
-export default function login() {
+export default function LoginPage() {
   return (
-    <div>
-        
+    <div className='login-page'>
+        <div className='login-container'>
+
+        </div>
     </div>
   )
 }
