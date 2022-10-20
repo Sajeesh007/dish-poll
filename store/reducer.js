@@ -3,6 +3,7 @@ export const FETCH = {
     SUCCESS: "FETCH_SUCCESS",
     ERROR: "FETCH_ERROR"
 }
+
 export const loginReducer = (state, action) => {
     switch (action.type) {
         case FETCH.START:
@@ -52,6 +53,13 @@ export const fetchReducer = (state, action) => {
             break;
     }
 }
+
+export const VOTE = {
+    START: "FETCH_START",
+    SUCCESS: "FETCH_SUCCESS",
+    ERROR: "FETCH_ERROR"
+}
+
 
 export const voteReducer = (state, action) => {
     switch (action.type) {
