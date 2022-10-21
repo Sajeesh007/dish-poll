@@ -1,7 +1,7 @@
 import { useReducer } from 'react'
 import { useRouter } from 'next/router'
 
-import { loginReducer, FETCH } from '@/store/reducer'
+import { loginReducer, FETCH, fetchReducer } from '@/store/reducer'
 
 import Input from '@/components/Input'
 
@@ -9,7 +9,7 @@ export default function LoginPage() {
 
   const router = useRouter()
 
-  const [state, dispatch] = useReducer(loginReducer,{loading: false, error: {type: false}})
+  const [state, dispatch] = useReducer(fetchReducer,{loading: false, error: {type: false}})
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -21,7 +21,7 @@ export default function LoginPage() {
       if(user.length == 0) 
         dispatch({type: FETCH.ERROR, payload: "Invalid username or password" })
       else {
-        dispatch({type: FETCH.SUCCESS, payload: {id: user[0].id, name: user[0].username} })
+        dispatch({type: FETCH.SUCCESS })
         router.push('/')
       }
     }).catch((err)=>  dispatch({type: FETCH.ERROR, payload: "Network error"}))
