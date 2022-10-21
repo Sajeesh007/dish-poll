@@ -11,7 +11,7 @@ export default function DishCard({id, image, name, desc, rank, dishDispatch}) {
 
     return (
         <div className={`flex flex-col items-center justify-between rounded-xl p-8 w-96 shadow-lg
-            ${rank != 0 ? 'bg-zinc-800 text-white' : 'bg-indigo-300' } `}>
+            ${rank !== 1000 ? 'bg-zinc-800 text-white' : 'bg-indigo-300' } `}>
             <div className="flex flex-col">
                 <img src={image+ '?random=' + id} className='w-full h-72'/>
                 <h5 className="text-xl font-bold pt-2">{name}</h5>

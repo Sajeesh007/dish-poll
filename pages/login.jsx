@@ -1,7 +1,7 @@
 import { useReducer } from 'react'
 import { useRouter } from 'next/router'
 
-import { loginReducer, FETCH, fetchReducer } from '@/store/reducer'
+import { FETCH, fetchReducer } from '@/store/reducer'
 
 import Input from '@/components/Input'
 
