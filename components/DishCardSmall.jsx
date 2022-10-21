@@ -1,13 +1,5 @@
-import { DISH } from "@/store/reducer";
-import VoteButton from "./VoteButton";
 
 export default function DishCard({id, image, name, point, dishDispatch, index}) {
-
-    const handleClick = (rank) => {
-        if(rank == 1) dishDispatch({type: DISH.VOTE.FIRST, payload: id})
-        else if(rank == 2) dishDispatch({type: DISH.VOTE.SECOND, payload: id})
-        else if(rank == 3) dishDispatch({type: DISH.VOTE.THIRD, payload: id})
-    }
 
     return (
         <div className={`flex items-center justify-between rounded-3xl py-2 px-4 w-96 shadow-lg bg-indigo-300`}>

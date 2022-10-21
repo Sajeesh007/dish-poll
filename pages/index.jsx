@@ -17,6 +17,8 @@ export default function Home() {
     dish.length == 0 && fetchDishes(fetchDispatch, dishDispatch)
   }, [])
 
+  console.log(dish);
+
   return (
     <div className='flex flex-col pt-4  items-center min-h-screen bg-indigo-200'>
       <h2 className="text-5xl pb-4">Dishes</h2>
