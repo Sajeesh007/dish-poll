@@ -8,7 +8,7 @@ export default function DishCard({id, image, name, point, index, rank}) {
     const [hover, sethover] = useState(false)
 
     return (
-        <div className={`flex items-center justify-between rounded-3xl py-2 px-4 w-96 shadow-lg 
+        <div className={`flex items-center justify-between rounded-3xl py-2 px-4 w-full sm:w-96 shadow-lg 
             ${rank !== 1000 ? 'bg-zinc-800 text-white' : 'bg-indigo-300 '}`}
             onMouseOver={()=> rank !== 1000 && sethover(true)} onMouseOut={()=> rank !== 1000 && sethover(false)}>
             <div className="flex space-x-4 justify-center items-center" >

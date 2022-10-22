@@ -6,8 +6,11 @@ import DishCardSmall from '@/components/DishCardSmall'
 import { useDishContext } from '@/store/Context'
 import { fetchReducer } from '@/store/reducer'
 import { fetchDishes } from 'utils/helper'
+import { useRouter } from 'next/router'
 
 export default function ResultPage() {
+
+  const router = useRouter()
 
   const {dish, dishDispatch} = useDishContext()
 
@@ -29,6 +32,13 @@ export default function ResultPage() {
               image={item.image} point={item.point} rank={item.rank}/>
           )}
         </div>
+
+        {fetchState?.error.type && 
+          <div className="flex flex-col justify-center items-center bg-red-500  text-white px-16 space-y-4 py-4 rounded-xl mt-8"> 
+            <p className="font-bold">Error in fetching details</p> 
+            <button onClick={()=> router.reload()} className='bg-red-400 shadow-lg rounded-lg px-6 py-2'>Reload</button>
+          </div>}
+
     </div>
   )
 }
