@@ -42,12 +42,12 @@ export const dishReducer = (state, action) => {
     switch (action.type) {
         case DISH.ADD:
             const user = JSON.parse(localStorage.getItem("user"))
-            if(user.rank1 !== null || user.rank2 !== null || user.rank3 !== null ){
+            if(user?.rank1 !== null || user?.rank2 !== null || user?.rank3 !== null ){
                 return action.payload.map((item)=> {
                     return {
                         ...item,
-                        rank: user.rank1 == item.id ? 1 : user.rank2 == item.id ? 2 : user.rank3 == item.id ? 3 : 1000,
-                        point: user.rank1 == item.id ? 30 : user.rank2 == item.id ? 20 : user.rank3 == item.id ? 10 : 0
+                        rank: user?.rank1 == item.id ? 1 : user?.rank2 == item.id ? 2 : user?.rank3 == item.id ? 3 : 1000,
+                        point: user?.rank1 == item.id ? 30 : user?.rank2 == item.id ? 20 : user?.rank3 == item.id ? 10 : 0
                     }
                 }).sort((a, b) => a.rank - b.rank)
             }
