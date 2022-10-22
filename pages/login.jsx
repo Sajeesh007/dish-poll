@@ -22,11 +22,13 @@ export default function LoginPage() {
         dispatch({type: FETCH.ERROR, payload: "Invalid username or password" })
       else {
         dispatch({type: FETCH.SUCCESS })
+        localStorage.setItem("user", JSON.stringify({id: user[0].id, name: user[0].username, rank1: null, rank2: null, rank3: null}))
         router.push('/')
       }
     }).catch((err)=>  dispatch({type: FETCH.ERROR, payload: "Network error"}))
   }
 
+  
 
   return (
     <div className='flex justify-center items-center min-h-screen'>

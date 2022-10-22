@@ -25,7 +25,8 @@ export default function ResultPage() {
 
         <div className='bg-indigo-400 rounded-xl py-4 px-5 flex flex-col space-y-4 mt-4 ' >
           {dish?.map((item, index) => 
-            <DishCardSmall key={item.id} id={item.id} index={index + 1} name={item.dishName} desc={item.description} image={item.image} point={item.point} dishDispatch={dishDispatch}/>
+            <DishCardSmall key={item.id} id={item.id} index={index + 1} name={item.dishName} desc={item.description}
+              image={item.image} point={item.point} rank={item.rank}/>
           )}
         </div>
     </div>
