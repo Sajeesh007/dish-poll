@@ -11,4 +11,4 @@ npm run dev
 
 ## Hosting
 
-Hosted app link : [https://dish-poll-sigma.vercel.app/] (https://dish-poll-sigma.vercel.app/) 
+Hosted app link : https://dish-poll-sigma.vercel.app/
