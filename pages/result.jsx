@@ -7,6 +7,7 @@ import { useDishContext } from '@/store/Context'
 import { fetchReducer } from '@/store/reducer'
 import { fetchDishes } from 'utils/helper'
 import { useRouter } from 'next/router'
+import Header from '@/components/Header'
 
 export default function ResultPage() {
 
@@ -22,8 +23,9 @@ export default function ResultPage() {
 
 
   return (
-    <div className='flex flex-col pt-4  items-center min-h-screen '>
-        <h2 className="text-5xl pb-4 font-bold">Result</h2>
+    <div className='flex flex-col items-center min-h-screen '>
+        <Header/>
+        <h2 className="text-5xl py-4 font-bold">Result</h2>
         <Tab />
 
         <div className='bg-indigo-400 rounded-xl py-4 px-5 flex flex-col space-y-4 mt-4 ' >

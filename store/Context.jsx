@@ -1,4 +1,5 @@
-import { createContext, useContext, useReducer } from 'react'
+import { useRouter } from 'next/router'
+import { createContext, useContext, useEffect, useReducer } from 'react'
 import { dishReducer } from './reducer'
 
 
@@ -9,7 +10,15 @@ export function useDishContext(){
 
 export default function Context({children}) {
 
+    const router = useRouter()
+
     const [dish, dishDispatch] = useReducer(dishReducer, [])
+
+    useEffect(() => {
+      const user = JSON.parse(localStorage.getItem("user"))
+      user == null && router.push('/login')
+    }, [])
+    
 
 
     return (

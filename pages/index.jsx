@@ -7,6 +7,7 @@ import { fetchDishes } from "utils/helper"
 import DishCard from "@/components/DishCard"
 import Tab from "@/components/Tab"
 import { useRouter } from "next/router"
+import Header from "@/components/Header"
 
 export default function Home() {
 
@@ -22,8 +23,9 @@ export default function Home() {
 
 
   return (
-    <div className='flex flex-col pt-4  items-center min-h-screen bg-indigo-200' >
-      <h2 className="text-5xl pb-4 font-bold">Dishes</h2>
+    <div className='flex flex-col items-center min-h-screen bg-indigo-200' >
+      <Header/>
+      <h2 className="text-5xl py-4 font-bold">Dishes</h2>
       <Tab />
       <div className="grid  grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 py-6">
         {dish?.map((item) => 
